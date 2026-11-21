@@ -174,7 +174,7 @@
                 <a href="#about" class="hover:text-cyan-400 transition-colors">Về khóa học</a>
                 <a href="#values" class="hover:text-cyan-400 transition-colors">9 Giá trị cốt lõi</a>
                 <a href="#syllabus" class="hover:text-cyan-400 transition-colors">Lộ trình 4 Tuần</a>
-                <a href="#community" class="hover:text-cyan-400 transition-colors flex items-center">
+                <a href="#workshop-gallery" class="hover:text-cyan-400 transition-colors flex items-center">
                     <span>Hình ảnh thực tế</span>
                     <span class="ml-1.5 px-1.5 py-0.5 text-[9px] font-bold rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Mới</span>
                 </a>
@@ -1003,6 +1003,206 @@
         </div>
     </section>
 
+    <!-- 10.5 WORKSHOP ALBUM CAROUSEL (ALBUM KÉO NGANG THỰC TẾ) -->
+    <section id="workshop-gallery" class="py-20 bg-[#07090E] border-t border-slate-800/80 relative overflow-hidden">
+        <!-- Background subtle glow -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <div class="inline-flex items-center px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold mb-3 border border-cyan-500/30">
+                        <i data-lucide="camera" class="w-3.5 h-3.5 mr-1.5"></i> Khoảnh Khắc Thực Tế • Học Thật Làm Thật
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-display">
+                        Album Các Buổi Workshop <span class="gradient-text">Kèm Cặp Học Viên</span>
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl">
+                        Không lý thuyết suông – Từng học viên được trực tiếp cầm tay chỉ việc, sửa lỗi prompt, đóng gói AI Agent và tạo ra sản phẩm kinh doanh ngay tại lớp.
+                    </p>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="flex items-center space-x-3 flex-shrink-0">
+                    <span id="album-counter" class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-3 py-1.5 rounded-lg border border-cyan-800/40">01 / 09</span>
+                    <button onclick="scrollAlbum(-1)" aria-label="Xem hình trước" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-400 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-lg active:scale-95">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="scrollAlbum(1)" aria-label="Xem hình kế tiếp" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-400 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-lg active:scale-95">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scrollable Track -->
+            <div id="album-track" class="flex space-x-5 overflow-x-auto pb-6 pt-2 scroll-smooth snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none" style="scrollbar-width: none; -ms-overflow-style: none;">
+                
+                <!-- Photo 1 -->
+                <div onclick="openLightbox(0)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_01.jpg" alt="Workshop 1:1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-purple-600/90 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Workshop 1:1
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Cầm Tay Chỉ Việc 1:1</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Hướng dẫn trực tiếp trên laptop của học viên, giải quyết triệt để từng bài toán.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div onclick="openLightbox(1)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_02.jpg" alt="Không gian học" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-cyan-600/90 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Không Gian Học
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Không Gian Đào Tạo Hiện Đại</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Môi trường công nghệ cao tạo cảm hứng sáng tạo và tập trung cao độ.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div onclick="openLightbox(2)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_03.jpg" alt="Sửa lỗi Prompt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-indigo-600/90 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Sửa Lỗi Prompt
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Tối Ưu Prompt Chuyên Sâu</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Giảng viên trực tiếp audit prompt và cấu trúc kịch bản video AI chuẩn viral.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div onclick="openLightbox(3)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_04.jpg" alt="Sản phẩm đầu tay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-emerald-600/90 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Sản Phẩm Đầu Tay
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Ra Kết Quả Ngay Tại Buổi Học</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Học viên hào hứng khi tự tay đóng gói bộ ấn phẩm marketing và bot bán hàng đầu tiên.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div onclick="openLightbox(4)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_05.jpg" alt="Thảo luận nhóm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-purple-600/90 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Thực Chiến Doanh Nghiệp
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Giải Quyết Bài Toán Doanh Nghiệp</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Phân tích thực trạng mô hình kinh doanh của từng học viên để ứng dụng AI tối ưu chi phí.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div onclick="openLightbox(5)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_06.jpg" alt="Đóng gói AI Agent" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-cyan-600/90 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Đóng Gói AI Agent
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Demo Trợ Lý Ảo Vận Hành</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Nạp dữ liệu kinh doanh riêng và kích hoạt bot tự động phản hồi khách hàng 24/7.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 7 -->
+                <div onclick="openLightbox(6)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_07.jpg" alt="Kết nối mạng lưới" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-indigo-600/90 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Mạng Lưới Đối Tác
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Gắn Kết & Mở Rộng Quan Hệ</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Cơ hội gặp gỡ các chủ doanh nghiệp, nhà bán lẻ và chuyên gia chuyển đổi số.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 8 -->
+                <div onclick="openLightbox(7)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_08.jpg" alt="Nghiệm thu khóa học" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-emerald-600/90 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Nghiệm Thu Khóa Học
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Nghiệm Thu Landing Page & Phễu</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Học viên tự tin thuyết trình về hệ thống phễu và chiến dịch marketing vừa xây dựng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 9 -->
+                <div onclick="openLightbox(8)" class="w-[290px] sm:w-[350px] md:w-[380px] flex-shrink-0 snap-start glow-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-400/60 transition-all duration-300 group cursor-pointer shadow-xl">
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="assets/workshop_gallery/workshop_photo_09.jpg" alt="Lễ tốt nghiệp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-[10px] font-bold tracking-wide uppercase shadow">
+                            Lễ Tốt Nghiệp
+                        </span>
+                        <div class="absolute bottom-3 left-4 right-4">
+                            <h4 class="font-bold text-white text-sm">Tự Hào Nhận Bằng Chứng Nhận</h4>
+                            <p class="text-[11px] text-slate-300 line-clamp-2 mt-0.5">Khoảnh khắc đáng nhớ nhận chứng chỉ tốt nghiệp danh giá từ Viện Phát Triển KHCN & Giáo Dục.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Drag indicator & Hint -->
+            <div class="flex items-center justify-between text-xs text-slate-500 mt-2 px-1">
+                <span class="flex items-center">
+                    <i data-lucide="move-horizontal" class="w-4 h-4 mr-1.5 text-cyan-400"></i>
+                    Kéo chuột hoặc vuốt màn hình để xem thêm 9 khoảnh khắc thực tế
+                </span>
+                <span class="text-cyan-400/80 hidden sm:inline-block">💡 Bấm vào ảnh để phóng to toàn màn hình</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL PHÓNG TO HÌNH ẢNH WORKSHOP -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" aria-label="Đóng" class="absolute top-5 right-5 text-slate-400 hover:text-white bg-slate-900/80 p-2.5 rounded-full border border-slate-700 transition-all z-10 cursor-pointer">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <button onclick="lightboxNav(-1)" aria-label="Ảnh trước" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white bg-slate-900/80 p-3 rounded-full border border-slate-700 transition-all z-10 cursor-pointer hover:border-cyan-400">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+        </button>
+        <button onclick="lightboxNav(1)" aria-label="Ảnh sau" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white bg-slate-900/80 p-3 rounded-full border border-slate-700 transition-all z-10 cursor-pointer hover:border-cyan-400">
+            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </button>
+        <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Workshop Photo" class="max-w-full max-h-[75vh] object-contain rounded-2xl border-2 border-cyan-400/40 shadow-2xl">
+            <p id="lightbox-caption" class="text-sm text-slate-200 mt-4 text-center max-w-xl font-medium"></p>
+        </div>
+    </div>
+
     <!-- 11. FOOTER -->
     <footer class="py-12 bg-[#04060A] border-t border-slate-900 text-slate-500 text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -1344,6 +1544,103 @@
             }
 
             requestAnimationFrame(animate);
+        }
+
+        // ===== WORKSHOP ALBUM CAROUSEL =====
+        const totalAlbumPhotos = 9;
+
+        function scrollAlbum(direction) {
+            const track = document.getElementById('album-track');
+            if (!track) return;
+            const scrollAmount = 380;
+            track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        // Mouse Drag to Scroll & Touch gesture
+        (function initAlbumDrag() {
+            const track = document.getElementById('album-track');
+            if (!track) return;
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            track.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - track.offsetLeft;
+                scrollLeft = track.scrollLeft;
+            });
+            track.addEventListener('mouseleave', () => { isDown = false; });
+            track.addEventListener('mouseup', () => { isDown = false; });
+            track.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - track.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                track.scrollLeft = scrollLeft - walk;
+            });
+
+            // Update counter on scroll
+            track.addEventListener('scroll', () => {
+                const cardWidth = 360;
+                const idx = Math.min(totalAlbumPhotos, Math.max(1, Math.round(track.scrollLeft / cardWidth) + 1));
+                const counter = document.getElementById('album-counter');
+                if (counter) counter.innerText = String(idx).padStart(2, '0') + ' / ' + String(totalAlbumPhotos).padStart(2, '0');
+            });
+        })();
+
+        // Lightbox Popup Functionality
+        const workshopPhotos = [
+            { src: 'assets/workshop_gallery/workshop_photo_01.jpg', title: 'Hướng dẫn kèm cặp 1:1 trực tiếp trên laptop cho học viên' },
+            { src: 'assets/workshop_gallery/workshop_photo_02.jpg', title: 'Không gian đào tạo hiện đại, học viên tập trung thực chiến' },
+            { src: 'assets/workshop_gallery/workshop_photo_03.jpg', title: 'Giảng viên trực tiếp sửa bài tập prompt và tối ưu kịch bản video AI' },
+            { src: 'assets/workshop_gallery/workshop_photo_04.jpg', title: 'Học viên hào hứng khi tự tay đóng gói bộ ấn phẩm bán hàng đầu tiên' },
+            { src: 'assets/workshop_gallery/workshop_photo_05.jpg', title: 'Thảo luận nhóm giải quyết bài toán marketing thực tế cho doanh nghiệp' },
+            { src: 'assets/workshop_gallery/workshop_photo_06.jpg', title: 'Nạp dữ liệu kinh doanh riêng và demo cỗ máy AI Agent vận hành' },
+            { src: 'assets/workshop_gallery/workshop_photo_07.jpg', title: 'Khoảnh khắc gắn kết, chia sẻ kinh nghiệm vận hành thực tế' },
+            { src: 'assets/workshop_gallery/workshop_photo_08.jpg', title: 'Nghiệm thu sản phẩm cuối khóa: Landing page & phễu chuyển đổi' },
+            { src: 'assets/workshop_gallery/workshop_photo_09.jpg', title: 'Trao bằng tốt nghiệp danh giá từ Viện Phát Triển KHCN & Giáo Dục' }
+        ];
+
+        let activeLightboxIdx = 0;
+        function openLightbox(idx) {
+            activeLightboxIdx = idx;
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            if (!modal || !img) return;
+            img.src = workshopPhotos[idx].src;
+            if (cap) cap.innerText = workshopPhotos[idx].title;
+            modal.classList.remove('hidden');
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function lightboxNav(dir) {
+            activeLightboxIdx = (activeLightboxIdx + dir + workshopPhotos.length) % workshopPhotos.length;
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            if (img) img.src = workshopPhotos[activeLightboxIdx].src;
+            if (cap) cap.innerText = workshopPhotos[activeLightboxIdx].title;
+        }
+
+        // Close on ESC or click outside
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('lightbox-modal');
+            if (!modal || modal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxNav(-1);
+            if (e.key === 'ArrowRight') lightboxNav(1);
+        });
+
+        const lightboxModalEl = document.getElementById('lightbox-modal');
+        if (lightboxModalEl) {
+            lightboxModalEl.addEventListener('click', (e) => {
+                if (e.target === lightboxModalEl) closeLightbox();
+            });
         }
 
         // Initialize on load
