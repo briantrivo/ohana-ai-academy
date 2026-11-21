@@ -887,6 +887,16 @@
                             </select>
                         </div>
 
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Khảo sát khả năng sử dụng AI hiện tại của bạn ?</label>
+                            <select id="reg-ai-level" name="aiLevel" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:border-cyan-400 text-sm">
+                                <option>Chưa biết về AI.</option>
+                                <option>Đã biết dùng Gemini, Chat GPT cơ bản.</option>
+                                <option>Đã ứng dụng AI vào trong công việc.</option>
+                                <option>Muốn xây dựng hệ thống Affiliate AI tạo thu nhập.</option>
+                            </select>
+                        </div>
+
                         <button type="submit" id="reg-submit-btn" class="w-full btn-gradient text-white font-bold text-base py-4 rounded-xl shadow-xl flex items-center justify-center transition-all cursor-pointer">
                             <i data-lucide="send" class="w-5 h-5 mr-2"></i>
                             <span id="btn-text">XÁC NHẬN ĐĂNG KÝ (GIỮ HỌC BỔNG 49%)</span>
@@ -1052,6 +1062,7 @@
             const phone = document.getElementById('reg-phone').value.trim();
             const email = document.getElementById('reg-email').value.trim();
             const demand = document.getElementById('reg-demand').value;
+            const aiLevel = document.getElementById('reg-ai-level').value;
 
             // UI loading state
             submitBtn.disabled = true;
@@ -1065,11 +1076,13 @@
                 full_name: name,
                 phone: phone,
                 email: email,
+                demand: demand,
+                ai_level: aiLevel,
                 company: demand,
                 ticket: "Ohana AI Mastery (Học bổng 49%)",
                 attendees: "1",
                 source: "Landing Page Ohana AI Mastery",
-                note: demand,
+                note: "Khảo sát AI: " + aiLevel + " | Nhu cầu: " + demand,
                 status: "moi"
             };
 
