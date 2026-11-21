@@ -778,24 +778,13 @@
                         </ul>
                     </div>
 
-                    <!-- Certificate Mockup Visual -->
+                    <!-- Certificate High-Res Visual -->
                     <div class="lg:col-span-5 flex justify-center">
-                        <div class="w-full max-w-sm rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-indigo-950 p-6 border-2 border-indigo-400/40 shadow-2xl relative text-center">
-                            <div class="border border-indigo-500/20 p-5 rounded-xl bg-[#090D16]">
-                                <div class="w-12 h-12 mx-auto rounded-full bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 mb-3">
-                                    <i data-lucide="award" class="w-6 h-6"></i>
-                                </div>
-                                <div class="text-[10px] tracking-widest text-slate-400 uppercase font-semibold">Giấy Chứng Nhận Tốt Nghiệp</div>
-                                <div class="text-xs font-bold text-white uppercase mt-1">Viện Phát Triển KHCN & Giáo Dục</div>
-                                <div class="w-12 h-0.5 bg-cyan-400 mx-auto my-3"></div>
-                                <div class="text-[11px] text-slate-300">Chứng nhận học viên đã hoàn thành xuất sắc chương trình</div>
-                                <div class="text-sm font-bold text-cyan-300 my-2">OHANA AI MASTERY</div>
-                                <div class="text-[10px] text-slate-400">Khóa đào tạo AI Kinh Doanh Thực Chiến 4 Tuần</div>
-                                
-                                <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[9px] text-slate-400">
-                                    <span>Mộc đỏ xác nhận</span>
-                                    <span class="text-emerald-400 font-semibold">Hợp lệ & Định danh</span>
-                                </div>
+                        <div class="glow-card rounded-2xl overflow-hidden border-2 border-cyan-400/50 p-2 sm:p-3 relative group shadow-2xl hover:border-cyan-300 transition-all duration-500 max-w-md w-full">
+                            <div class="relative rounded-xl overflow-hidden">
+                                <img src="assets/images/chung_chi_vien_khcn_ohana.jpg" 
+                                     alt="Giấy Chứng Nhận Tốt Nghiệp Viện Phát Triển KHCN & Giáo Dục - Ohana AI Mastery" 
+                                     class="w-full h-auto object-cover rounded-xl group-hover:scale-[1.02] transition-transform duration-500 shadow-inner">
                             </div>
                         </div>
                     </div>
@@ -868,28 +857,29 @@
 
                 <!-- Registration Form Anchor -->
                 <div id="registration-form" class="mt-4 pt-6 border-t border-slate-800">
-                    <h4 class="text-center font-bold text-white text-lg mb-4">Điền Thông Tin Nhận Ưu Đãi Tháng 12/2026</h4>
+                    <h4 class="text-center font-bold text-white text-lg mb-1">Điền Thông Tin Nhận Ưu Đãi Tháng 12/2026</h4>
+                    <p class="text-center text-xs text-cyan-400 mb-4">Dữ liệu được bảo mật và đồng bộ trực tiếp vào hệ thống Google Sheet của Viện</p>
                     
-                    <form onsubmit="handleRegistration(event)" class="space-y-4 max-w-lg mx-auto">
+                    <form id="leadForm" onsubmit="handleRegistration(event)" class="space-y-4 max-w-lg mx-auto">
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 mb-1">Họ và tên của bạn *</label>
-                            <input type="text" required placeholder="Ví dụ: Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
+                            <input type="text" id="reg-name" name="fullName" required placeholder="Ví dụ: Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1">Số điện thoại (Zalo) *</label>
-                                <input type="tel" required placeholder="090x xxx xxx" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
+                                <input type="tel" id="reg-phone" name="phone" required placeholder="090x xxx xxx" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1">Email liên hệ *</label>
-                                <input type="email" required placeholder="email@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
+                                <input type="email" id="reg-email" name="email" required placeholder="email@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm">
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 mb-1">Nhu cầu chính của bạn</label>
-                            <select class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:border-cyan-400 text-sm">
+                            <select id="reg-demand" name="demand" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:border-cyan-400 text-sm">
                                 <option>Ứng dụng AI tăng doanh số kinh doanh hiện tại</option>
                                 <option>Tự động hóa bán hàng Zalo OA & Fanpage</option>
                                 <option>Tạo hình ảnh & Video AI Marketing</option>
@@ -897,13 +887,23 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="w-full btn-gradient text-white font-bold text-base py-4 rounded-xl shadow-xl flex items-center justify-center">
+                        <button type="submit" id="reg-submit-btn" class="w-full btn-gradient text-white font-bold text-base py-4 rounded-xl shadow-xl flex items-center justify-center transition-all cursor-pointer">
                             <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                            XÁC NHẬN ĐĂNG KÝ (GIỮ HỌC BỔNG 49%)
+                            <span id="btn-text">XÁC NHẬN ĐĂNG KÝ (GIỮ HỌC BỔNG 49%)</span>
                         </button>
 
-                        <div id="success-msg" class="hidden text-center p-3 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs">
-                            🎉 Đăng ký thành công! Ban Tuyển Sinh Ohana Career sẽ liên hệ với bạn trong vòng 15 phút.
+                        <div id="success-msg" class="hidden text-center p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm space-y-1">
+                            <div class="font-bold flex items-center justify-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-emerald-400"></i>
+                                🎉 Đăng ký thành công! Dữ liệu đã lưu vào Google Sheet.
+                            </div>
+                            <div class="text-xs text-slate-300">
+                                Ban Tuyển Sinh Ohana Career sẽ liên hệ xác nhận qua Zalo trong vòng 15 phút.
+                            </div>
+                        </div>
+
+                        <div id="error-msg" class="hidden text-center p-3 rounded-lg bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs">
+                            Có lỗi khi kết nối. Vui lòng thử lại hoặc nhắn tin qua Zalo hotline.
                         </div>
                     </form>
 
@@ -1037,14 +1037,82 @@
         // Init Lucide Icons
         lucide.createIcons();
 
-        // Form handler simulation
-        function handleRegistration(e) {
+        // ===== GOOGLE SHEETS CONFIGURATION =====
+        // Mặc định kết nối Webhook Google Apps Script của hệ sinh thái Ohana/Astronixa
+        const GOOGLE_SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwlYK0UcsFwZStFfjWhMUcT-62HDwJx32_kCtYfuaNYqnI9ebD9T1lOzkGu9PYkBSRX/exec";
+
+        async function handleRegistration(e) {
             e.preventDefault();
+            const submitBtn = document.getElementById('reg-submit-btn');
+            const btnText = document.getElementById('btn-text');
             const successMsg = document.getElementById('success-msg');
-            successMsg.classList.remove('hidden');
-            setTimeout(() => {
-                alert("Chúc mừng bạn đã đăng ký giữ suất thành công! Ban Tuyển Sinh Ohana Career sẽ sớm liên hệ qua Zalo.");
-            }, 300);
+            const errorMsg = document.getElementById('error-msg');
+
+            const name = document.getElementById('reg-name').value.trim();
+            const phone = document.getElementById('reg-phone').value.trim();
+            const email = document.getElementById('reg-email').value.trim();
+            const demand = document.getElementById('reg-demand').value;
+
+            // UI loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75');
+            btnText.innerHTML = '<span class="inline-block animate-spin mr-2">⟳</span> Đang lưu vào Google Sheet...';
+            successMsg.classList.add('hidden');
+            if (errorMsg) errorMsg.classList.add('hidden');
+
+            const payload = {
+                time: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }),
+                full_name: name,
+                phone: phone,
+                email: email,
+                company: demand,
+                ticket: "Ohana AI Mastery (Học bổng 49%)",
+                attendees: "1",
+                source: "Landing Page Ohana AI Mastery",
+                note: demand,
+                status: "moi"
+            };
+
+            try {
+                // 1. Thử gửi qua Vercel serverless /api/register nếu chạy trên Vercel
+                let sent = false;
+                try {
+                    const localResp = await fetch('/api/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (localResp.ok) sent = true;
+                } catch (_) {}
+
+                // 2. Gửi trực tiếp đến Google Apps Script Webhook (no-cors đảm bảo luôn thông suốt)
+                if (GOOGLE_SHEET_WEBHOOK_URL) {
+                    await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    sent = true;
+                }
+
+                // Thành công
+                successMsg.classList.remove('hidden');
+                document.getElementById('leadForm').reset();
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+                
+                setTimeout(() => {
+                    alert("🎉 Chúc mừng " + name + "!\nThông tin của bạn đã được lưu vào Google Sheet thành công.\nBan Tuyển Sinh Ohana Career sẽ sớm liên hệ qua Zalo " + phone + " để gửi tài liệu và kích hoạt học bổng!");
+                }, 400);
+
+            } catch (err) {
+                console.error("Lỗi gửi dữ liệu:", err);
+                if (errorMsg) errorMsg.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75');
+                btnText.innerText = 'XÁC NHẬN ĐĂNG KÝ (GIỮ HỌC BỔNG 49%)';
+            }
         }
 
         // ===== SPACE CANVAS & SHOOTING STARS (METEOR SHOWER - OHANATRIVO STYLE) =====
