@@ -5,7 +5,7 @@ const GOOGLE_SHEET_WEBHOOK_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL || "https:
 
 export default async function handler(req, res) {
   // CORS Headers
-  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader(
@@ -23,9 +23,16 @@ export default async function handler(req, res) {
   }
 
   try {
-    const data = req.body || {};
-    
-    // Gửi tiếp đến Google Apps Script
+    let data = req.body || {};
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) {
+        data = { raw: req.body };
+      }
+    }
+
+    // Gửi tiếp đến Google Apps Script Webhook
     if (GOOGLE_SHEET_WEBHOOK_URL) {
       await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
         method: 'POST',
