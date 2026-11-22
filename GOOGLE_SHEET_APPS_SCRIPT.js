@@ -1,10 +1,10 @@
 /**
  * MÃ NGUỒN GOOGLE APPS SCRIPT ĐỒNG BỘ DỮ LIỆU TỰ ĐỘNG
- * Dành cho: KHÓA ĐÀO TẠO OHANA AI MASTERY (LÀM CHỦ AI KINH DOANH THỰC CHIẾN)
+ * Dành cho: KHÓA ĐÀO TẠO OHANA AI ACADEMY (LÀM CHỦ AI KINH DOANH THỰC CHIẾN)
  * 
  * HƯỚNG DẪN CÀI ĐẶT 1 PHÚT TRÊN GOOGLE SHEETS:
  * -------------------------------------------------------------
- * 1. Mở một Google Sheet mới (Đặt tên: "DANH SÁCH ĐĂNG KÝ OHANA AI MASTERY").
+ * 1. Mở một Google Sheet mới (Đặt tên: "DANH SÁCH ĐĂNG KÝ OHANA AI ACADEMY").
  * 2. Đặt tiêu đề cho các cột ở Dòng 1:
  *    - Cột A: Thời gian
  *    - Cột B: Họ và tên
@@ -22,7 +22,7 @@
  * 5. Nhấn Lưu (Ctrl + S).
  * 6. Nhấn nút "Triển khai" (Deploy) -> "Tùy chọn triển khai mới" (New deployment):
  *    - Loại triển khai: Ứng dụng web (Web app).
- *    - Mô tả: Ohana AI Mastery Webhook v2.
+ *    - Mô tả: Ohana AI Academy Webhook v2.
  *    - Thực thi dưới dạng (Execute as): Tôi (Địa chỉ email của bạn).
  *    - Người có quyền truy cập (Who has access): BẤT KỲ AI (Anyone) -> (Bắt buộc để web gửi được dữ liệu).
  * 7. Nhấn "Triển khai" (Deploy) và bấm "Cấp quyền truy cập" (Authorize access).
@@ -51,8 +51,8 @@ function doPost(e) {
     var email = data.email || "";
     var demand = data.demand || data.company || "";
     var aiLevel = data.ai_level || "Chưa khảo sát";
-    var ticket = data.ticket || "Ohana AI Mastery (Học bổng 49%)";
-    var source = data.source || "Landing Page Ohana AI Mastery";
+    var ticket = data.ticket || "Ohana AI Academy (Học bổng 49%)";
+    var source = data.source || "Landing Page Ohana AI Academy";
     var note = data.note || ("Nhu cầu: " + demand + " | Khảo sát AI: " + aiLevel);
     var status = data.status || "moi";
 
@@ -87,6 +87,6 @@ function doPost(e) {
 function doGet(e) {
   return ContentService.createTextOutput(JSON.stringify({
     ok: true,
-    service: "Ohana AI Mastery Google Sheet Webhook Active"
+    service: "Ohana AI Academy Google Sheet Webhook Active"
   })).setMimeType(ContentService.MimeType.JSON);
 }

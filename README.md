@@ -1,6 +1,6 @@
-# OHANA AI MASTERY - LÀM CHỦ AI KINH DOANH THỰC CHIẾN
+# OHANA AI ACADEMY - LÀM CHỦ AI KINH DOANH THỰC CHIẾN
 
-Landing Page chính thức cho Chương trình Đào tạo "OHANA AI MASTERY" - Viện Phát Triển KHCN & Giáo Dục kết hợp cùng Hệ sinh thái Astronixa Ohana.
+Landing Page chính thức cho Chương trình Đào tạo "OHANA AI ACADEMY" - Viện Phát Triển KHCN & Giáo Dục kết hợp cùng Hệ sinh thái Astronixa Ohana.
 
 ## 🌟 Tính Năng Nổi Bật
 - **Giao diện DeepLearning.AI + Cyber Space phong cách vũ trụ**: Hiệu ứng Shooting Star (sao băng) Canvas 60fps mượt mà trên nền Dark Mode công nghệ.
@@ -16,4 +16,4 @@ Landing Page chính thức cho Chương trình Đào tạo "OHANA AI MASTERY" - 
 
 ## 👨‍💻 Tác giả & Quản trị
 - **Founder / Market Director**: Brian Võ (Võ Quốc Trí) - Ohana Astronixa
-- **GitHub**: [briantrivo/ohana-ai-mastery](https://github.com/briantrivo/ohana-ai-mastery)
+- **GitHub**: [briantrivo/ohana-ai-academy](https://github.com/briantrivo/ohana-ai-academy)
