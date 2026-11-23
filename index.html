@@ -904,13 +904,75 @@
                             <span id="btn-text">XÁC NHẬN ĐĂNG KÝ (GIỮ HỌC BỔNG 49%)</span>
                         </button>
 
-                        <div id="success-msg" class="hidden text-center p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm space-y-1">
-                            <div class="font-bold flex items-center justify-center">
-                                <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-emerald-400"></i>
-                                🎉 Đăng ký thành công! Dữ liệu đã lưu vào Google Sheet.
+                        <div id="success-msg" class="hidden mt-6 p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-emerald-950/70 via-slate-900/95 to-slate-950 border-2 border-emerald-500/50 text-left shadow-2xl space-y-5">
+                            <div class="text-center border-b border-emerald-500/20 pb-4">
+                                <div class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold mb-2">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 mr-1.5 text-emerald-400"></i>
+                                    ĐÃ GHI NHẬN THÔNG TIN ĐĂNG KÝ
+                                </div>
+                                <h5 class="text-white font-extrabold text-base sm:text-lg">THÔNG TIN CHUYỂN KHOẢN GIỮ HỌC BỔNG 49%</h5>
+                                <p id="payment-student-greeting" class="text-xs text-slate-300 mt-1">
+                                    Vui lòng quét mã QR hoặc chuyển khoản theo thông tin bên dưới để hoàn tất giữ suất ưu đãi:
+                                </p>
                             </div>
-                            <div class="text-xs text-slate-300">
-                                Ban Tuyển Sinh Ohana Career sẽ liên hệ xác nhận qua Zalo trong vòng 15 phút.
+
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+                                <!-- QR Code Column -->
+                                <div class="md:col-span-5 flex flex-col items-center">
+                                    <div class="bg-white p-2.5 rounded-2xl shadow-xl border-2 border-cyan-400/50 max-w-[210px] w-full">
+                                        <img src="assets/images/qr_techcombank_astronixa.jpg" alt="Mã QR Chuyển Khoản Công Ty TNHH Astronixa - Techcombank" class="w-full h-auto rounded-xl object-contain">
+                                    </div>
+                                    <span class="text-[11px] text-cyan-300 font-medium mt-2 flex items-center text-center">
+                                        <i data-lucide="scan-line" class="w-3.5 h-3.5 mr-1"></i> Quét mã VietQR nhanh 24/7
+                                    </span>
+                                </div>
+
+                                <!-- Bank Account Details Column -->
+                                <div class="md:col-span-7 space-y-3 text-xs sm:text-sm">
+                                    <div class="p-3 rounded-xl bg-slate-950/90 border border-slate-800">
+                                        <div class="text-[11px] text-slate-400 uppercase tracking-wider">Chủ tài khoản thụ hưởng</div>
+                                        <div class="text-white font-extrabold text-sm sm:text-base mt-0.5 text-cyan-300">CÔNG TY TNHH ASTRONIXA</div>
+                                    </div>
+
+                                    <div class="p-3 rounded-xl bg-slate-950/90 border border-cyan-500/40 flex items-center justify-between gap-2">
+                                        <div>
+                                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Số Tài Khoản</div>
+                                            <div class="text-white font-black text-lg sm:text-xl tracking-wider text-emerald-400 font-mono">894567</div>
+                                        </div>
+                                        <button type="button" onclick="copyTextValue('894567', this)" class="px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-semibold transition-all cursor-pointer flex-shrink-0">
+                                            Sao chép
+                                        </button>
+                                    </div>
+
+                                    <div class="p-3 rounded-xl bg-slate-950/90 border border-slate-800">
+                                        <div class="text-[11px] text-slate-400 uppercase tracking-wider">Ngân hàng</div>
+                                        <div class="text-white font-bold text-xs sm:text-sm mt-0.5">Ngân hàng Techcombank - Kỹ Thương Việt Nam</div>
+                                    </div>
+
+                                    <div class="p-3 rounded-xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-2">
+                                        <div>
+                                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Số tiền học phí (Ưu đãi 49%)</div>
+                                            <div class="text-cyan-300 font-extrabold text-sm sm:text-base mt-0.5">6.600.000 VNĐ</div>
+                                        </div>
+                                        <button type="button" onclick="copyTextValue('6600000', this)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all cursor-pointer flex-shrink-0">
+                                            Copy số tiền
+                                        </button>
+                                    </div>
+
+                                    <div class="p-3 rounded-xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-2">
+                                        <div class="min-w-0">
+                                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Nội dung chuyển khoản</div>
+                                            <div id="payment-transfer-note" class="text-amber-300 font-bold text-xs sm:text-sm mt-0.5 truncate">Họ tên + SĐT + Ohana AI</div>
+                                        </div>
+                                        <button type="button" id="copy-note-btn" onclick="copyTransferNote(this)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all cursor-pointer flex-shrink-0">
+                                            Sao chép
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center pt-2 border-t border-slate-800/80 text-xs text-slate-300">
+                                💬 Sau khi chuyển khoản, Ban Tuyển Sinh Ohana Career sẽ xác nhận qua Zalo của bạn trong vòng 15 phút.
                             </div>
                         </div>
 
@@ -918,10 +980,6 @@
                             Có lỗi khi kết nối. Vui lòng thử lại hoặc nhắn tin qua Zalo hotline.
                         </div>
                     </form>
-
-                    <div class="text-center mt-4 text-xs text-slate-400">
-                        ⚡ Điều kiện tổ chức: Lớp tối thiểu 10 học viên để đảm bảo năng lượng và tương tác cao nhất.
-                    </div>
                 </div>
 
             </div>
@@ -1205,6 +1263,90 @@
         </div>
     </div>
 
+    <!-- PAYMENT MODAL (POPUP THÔNG TIN CHUYỂN KHOẢN SAU KHI ĐĂNG KÝ) -->
+    <div id="payment-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="relative w-full max-w-2xl rounded-3xl bg-gradient-to-b from-[#0F172A] to-[#090D16] border-2 border-cyan-400/50 shadow-[0_0_60px_rgba(0,240,255,0.25)] p-6 sm:p-8 my-8">
+            <button type="button" onclick="closePaymentModal()" aria-label="Đóng" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-900/90 hover:bg-slate-800 p-2 rounded-full border border-slate-700 transition-all cursor-pointer">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="text-center border-b border-slate-800 pb-5">
+                <div class="inline-flex items-center px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold mb-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 mr-1.5 text-emerald-400"></i>
+                    ĐĂNG KÝ THÀNH CÔNG • GIỮ HỌC BỔNG 49%
+                </div>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-white font-display">THÔNG TIN CHUYỂN KHOẢN HỌC PHÍ</h3>
+                <p id="modal-student-greeting" class="text-xs sm:text-sm text-slate-300 mt-1">
+                    Chúc mừng bạn đã đăng ký giữ suất ưu đãi. Vui lòng quét mã QR hoặc chuyển khoản theo thông tin bên dưới:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center mt-6">
+                <!-- QR Code Box -->
+                <div class="md:col-span-5 flex flex-col items-center">
+                    <div class="bg-white p-3 rounded-2xl shadow-2xl border-2 border-cyan-400 max-w-[230px] w-full">
+                        <img src="assets/images/qr_techcombank_astronixa.jpg" alt="Mã QR VietQR Techcombank - Công Ty TNHH Astronixa" class="w-full h-auto rounded-xl object-contain">
+                    </div>
+                    <span class="text-xs text-cyan-300 font-semibold mt-2.5 flex items-center">
+                        <i data-lucide="scan-line" class="w-4 h-4 mr-1.5"></i> Quét mã VietQR 24/7
+                    </span>
+                </div>
+
+                <!-- Bank Info Box -->
+                <div class="md:col-span-7 space-y-3 text-xs sm:text-sm">
+                    <div class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800">
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider">Đơn vị thụ hưởng</div>
+                        <div class="text-cyan-300 font-extrabold text-base sm:text-lg mt-0.5">CÔNG TY TNHH ASTRONIXA</div>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-950/90 border-2 border-emerald-500/40 flex items-center justify-between gap-2">
+                        <div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Số Tài Khoản</div>
+                            <div class="text-emerald-400 font-black text-xl sm:text-2xl tracking-wider font-mono">894567</div>
+                        </div>
+                        <button type="button" onclick="copyTextValue('894567', this)" class="px-3.5 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold transition-all cursor-pointer flex-shrink-0">
+                            Sao chép STK
+                        </button>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800">
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider">Ngân hàng</div>
+                        <div class="text-white font-bold text-sm mt-0.5">Ngân hàng Techcombank - Kỹ Thương Việt Nam</div>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-2">
+                        <div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Học phí ưu đãi (Giảm 49%)</div>
+                            <div class="text-cyan-300 font-extrabold text-base sm:text-lg mt-0.5">6.600.000 VNĐ</div>
+                        </div>
+                        <button type="button" onclick="copyTextValue('6600000', this)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all cursor-pointer flex-shrink-0">
+                            Copy số tiền
+                        </button>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-2">
+                        <div class="min-w-0">
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Nội dung chuyển khoản</div>
+                            <div id="modal-transfer-note" class="text-amber-300 font-bold text-xs sm:text-sm mt-0.5 truncate">Họ tên + SĐT + Ohana AI</div>
+                        </div>
+                        <button type="button" onclick="copyTransferNote(this)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all cursor-pointer flex-shrink-0">
+                            Sao chép
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-xs text-slate-400 text-center sm:text-left">
+                    ⚡ Ban Tuyển Sinh Ohana AI Academy sẽ liên hệ qua Zalo xác nhận ngay sau khi bạn hoàn tất.
+                </p>
+                <button type="button" onclick="closePaymentModal()" class="w-full sm:w-auto btn-gradient text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl shadow-lg cursor-pointer flex-shrink-0">
+                    Đã Hiểu & Đóng
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- 11. FOOTER -->
     <footer class="py-12 bg-[#04060A] border-t border-slate-900 text-slate-500 text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -1253,6 +1395,54 @@
         // Mặc định kết nối Webhook Google Apps Script của hệ sinh thái Ohana/Astronixa
         const GOOGLE_SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwlYK0UcsFwZStFfjWhMUcT-62HDwJx32_kCtYfuaNYqnI9ebD9T1lOzkGu9PYkBSRX/exec";
 
+        let latestTransferNote = "Ohana AI Academy";
+
+        function copyTextValue(val, btnEl) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(val);
+            } else {
+                const temp = document.createElement('textarea');
+                temp.value = val;
+                document.body.appendChild(temp);
+                temp.select();
+                document.execCommand('copy');
+                document.body.removeChild(temp);
+            }
+            if (btnEl) {
+                const oldText = btnEl.innerText;
+                btnEl.innerText = "✓ Đã chép";
+                setTimeout(() => { btnEl.innerText = oldText; }, 2000);
+            }
+        }
+
+        function copyTransferNote(btnEl) {
+            copyTextValue(latestTransferNote, btnEl);
+        }
+
+        function openPaymentModal() {
+            const modal = document.getElementById('payment-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+        }
+
+        function closePaymentModal() {
+            const modal = document.getElementById('payment-modal');
+            if (modal) modal.classList.add('hidden');
+            const successMsg = document.getElementById('success-msg');
+            if (successMsg && !successMsg.classList.contains('hidden')) {
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        const paymentModalEl = document.getElementById('payment-modal');
+        if (paymentModalEl) {
+            paymentModalEl.addEventListener('click', (e) => {
+                if (e.target === paymentModalEl) closePaymentModal();
+            });
+        }
+
         async function handleRegistration(e) {
             e.preventDefault();
             const submitBtn = document.getElementById('reg-submit-btn');
@@ -1269,7 +1459,7 @@
             // UI loading state
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-75');
-            btnText.innerHTML = '<span class="inline-block animate-spin mr-2">⟳</span> Đang lưu vào Google Sheet...';
+            btnText.innerHTML = '<span class="inline-block animate-spin mr-2">⟳</span> Đang xử lý & lưu thông tin...';
             successMsg.classList.add('hidden');
             if (errorMsg) errorMsg.classList.add('hidden');
 
@@ -1311,14 +1501,24 @@
                     sent = true;
                 }
 
-                // Thành công
+                // Cập nhật thông tin học viên vào bảng chuyển khoản & popup
+                latestTransferNote = name + " " + phone + " Ohana AI";
+                const noteInline = document.getElementById('payment-transfer-note');
+                const noteModal = document.getElementById('modal-transfer-note');
+                if (noteInline) noteInline.innerText = latestTransferNote;
+                if (noteModal) noteModal.innerText = latestTransferNote;
+
+                const greetingInline = document.getElementById('payment-student-greeting');
+                const greetingModal = document.getElementById('modal-student-greeting');
+                const greetingHtml = 'Chúc mừng học viên <strong class="text-cyan-300">' + name + '</strong> (<strong class="text-white">' + phone + '</strong>) đã giữ suất Học Bổng 49%. Vui lòng chuyển khoản học phí theo thông tin bên dưới:';
+                if (greetingInline) greetingInline.innerHTML = greetingHtml;
+                if (greetingModal) greetingModal.innerHTML = greetingHtml;
+
+                // Hiển thị khung thông tin chuyển khoản và bật Popup
                 successMsg.classList.remove('hidden');
                 document.getElementById('leadForm').reset();
                 if (typeof lucide !== 'undefined') lucide.createIcons();
-                
-                setTimeout(() => {
-                    alert("🎉 Chúc mừng " + name + "!\nThông tin của bạn đã được lưu vào Google Sheet thành công.\nBan Tuyển Sinh Ohana Career sẽ sớm liên hệ qua Zalo " + phone + " để gửi tài liệu và kích hoạt học bổng!");
-                }, 400);
+                openPaymentModal();
 
             } catch (err) {
                 console.error("Lỗi gửi dữ liệu:", err);
